@@ -1,0 +1,26 @@
+{
+  "name": "html-starter",
+  "version": "1.0.0",
+  "description": "The starter of the HTML basic project",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass resources/sass/main.scss resources/styles/main.css --watch",
+    "babel": "babel resources/js/src -d resources/js/scripts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webtech-delver/html-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webtech-delver/html-starter/issues"
+  },
+  "homepage": "https://github.com/webtech-delver/html-starter#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "node-sass": "^4.11.0"
+  }
+}
