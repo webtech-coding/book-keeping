@@ -6,9 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Html starter</title>
     <link rel="stylesheet" href="resources/styles/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="node_modules/js-datepicker/dist/datepicker.min.css">
 </head>
 <body>
-    <h1>HMTL starter</h1>
-    <script src="resources/js/scripts/index.js"></script>
+    <div class="container">
+        <div class="info">
+            <h3 class="info_company">Everest Company Oy</h3>
+            <p class="info_company">Everest Company Oy</p>
+        </div>
+
+        <!--<div class="add"><i class="fas fa-plus"></i> <span class="add__text">New Transaction</span> </div>-->
+        <div class="input">
+            <input type="text" class="input__date" placeholder="date">
+            <input type="text" class="input__reference" placeholder="reference">
+            <input type="text" class="input__description" placeholder="description">
+            <input type="number" class="input__value" placeholder="amount">
+            <select class="input__type">
+                <option value="income" class="input__type-option">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button class="input__submit"><i class="fas fa-check"></i></button>
+        </div>
+        
+        <table class="table">
+            <thead class="table__head">
+                <tr class="table__head-row">
+                    <td class="table__head-data">Date</td>
+                    <td class="table__head-data">Reference</td>
+                    <td class="table__head-data table__head-data--description">Description</td>
+                    <td class="table__head-data">Income</td>
+                    <td class="table__head-data">Expense</td>
+                    <td class="table__body-data table__body-data--cta"><i class="far fa-trash-alt"></i></td>
+                </tr>
+            </thead>
+            <tbody class="table__body">
+                <tr class="table__body-row">
+                    <td class="table__body-data">12/1/2019</td>
+                    <td class="table__body-data">12/2rhh</td>
+                    <td class="table__body-data">Bought a car</td>
+                    <td class="table__body-data"> --- </td>
+                    <td class="table__body-data">345</td>
+                    <td class="table__body-data table__body-data--cta"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr class="table__body-row">
+                    <td class="table__body-data">12/1/2019</td>
+                    <td class="table__body-data">12/2rhh</td>
+                    <td class="table__body-data">Bought a car</td>
+                    <td class="table__body-data"> --- </td>
+                    <td class="table__body-data">345</td>
+                    <td class="table__body-data table__body-data--cta"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr class="table__body-row">
+                    <td class="table__body-data">12/1/2019</td>
+                    <td class="table__body-data">12/2rhh</td>
+                    <td class="table__body-data">Bought a car</td>
+                    <td class="table__body-data"> --- </td>
+                    <td class="table__body-data table__body-data--expense">345</td>
+                    <td class="table__body-data table__body-data--cta"><i class="far fa-trash-alt"></i></td>
+                </tr>
+                <tr class="table__body-row">
+                    <td class="table__body-data">12/1/2019</td>
+                    <td class="table__body-data">12/2rhh</td>
+                    <td class="table__body-data">Bought a car</td>
+                    <td class="table__body-data table__body-data--income"> --- </td>
+                    <td class="table__body-data">$345</td>
+                    <td class="table__body-data table__body-data--cta"><i class="far fa-trash-alt"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="node_modules/js-datepicker/dist/datepicker.min.js"></script>
+    <script src="app.js"></script>
+
+    <script>
+        var picker = datepicker('.input__date',{
+            startDay:1
+        })
+    </script>
 </body>
 </html>

@@ -1,0 +1,133 @@
+.container{
+    width: 1200px;
+    margin: 50px auto;
+
+}
+.info{
+    margin-bottom:20px;
+}
+.add{
+    background: rgb(33, 211, 255);
+    display:inline-block;
+    padding:10px 20px;
+    color:#fff;
+    cursor: pointer;
+    margin: 20px 0px;
+
+    &__text{
+        letter-spacing: 1px;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+}
+.input{
+    margin: 10px 0px;
+    font-size: 16px;
+    background: rgb(33, 211, 255);
+    padding: 25px;
+    
+    &__date{
+        
+        padding: 10px;
+        outline: none;
+        
+    }
+    &__reference{
+       
+        padding: 10px;
+        outline: none;
+    }
+    &__description{
+        width: 500px;
+       
+        padding: 10px;
+        outline: none;
+    }
+    &__value{
+       
+        padding: 10px;
+        outline: none;
+    }
+    &__type{
+       
+        width: 80px;
+        height: 35px;
+        border-radius: 0px;
+        outline: none;
+        padding:10px;
+    }
+
+    &__submit{
+        padding: 10px;
+        border-radius: 50%;
+        color: green;
+        cursor: pointer;
+        margin-left:25px;
+    }
+}
+.table{
+    // margin: 20px 50px;
+
+    &__head{
+        
+       &-row{
+           
+           color: rgb(73, 73, 73);
+           letter-spacing: 1px;
+       }
+
+       &-data{
+           padding:10px 50px;
+           text-align: center;
+           margin: 0px;
+           text-transform: uppercase;
+           //border-bottom: 1px solid rgba(#171c12,.3);
+           border: 1px solid rgba(#171c12,.3);
+
+           &:not(:last-child){
+               // border-right: 1px solid rgba(#171c12,.3);
+           }
+
+           &--description{
+               min-width: 500px;
+           }
+       }
+
+    }
+
+    &__body{
+        text-align: center;
+        border: 1px solid red;
+        &-row{
+            border: 1px solid red;
+            &:hover{
+                .table__body-data--cta{
+                    display: block;
+                    animation: slideRight .4s ease;
+                }
+            }
+        }
+        &-data{
+            padding: 10px 5px;
+            border: 1px solid rgb(221, 221, 221);
+            &--income{
+                background: green;
+                color: #fff;
+            }
+            &--expense{
+                background: red;
+                color: #fff;
+            }
+
+            &--cta{
+                background: rgb(33, 211, 255);
+                display: none;
+                padding: 10px 25px;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+       
+    }
+
+}

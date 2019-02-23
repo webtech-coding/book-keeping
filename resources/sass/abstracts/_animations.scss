@@ -1,0 +1,10 @@
+@keyframes slideRight{
+    0%{
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

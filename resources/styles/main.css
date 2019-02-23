@@ -1,3 +1,11 @@
+@keyframes slideRight {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+
 *,
 *::after,
 *::before {
@@ -40,3 +48,90 @@ button:active {
 
 html {
   font-size: 100%; }
+
+.container {
+  width: 1200px;
+  margin: 50px auto; }
+
+.info {
+  margin-bottom: 20px; }
+
+.add {
+  background: #21d3ff;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px 0px; }
+  .add__text {
+    letter-spacing: 1px;
+    font-size: 12px;
+    text-transform: uppercase; }
+
+.input {
+  margin: 10px 0px;
+  font-size: 16px;
+  background: #21d3ff;
+  padding: 25px; }
+  .input__date {
+    padding: 10px;
+    outline: none; }
+  .input__reference {
+    padding: 10px;
+    outline: none; }
+  .input__description {
+    width: 500px;
+    padding: 10px;
+    outline: none; }
+  .input__value {
+    padding: 10px;
+    outline: none; }
+  .input__type {
+    width: 80px;
+    height: 35px;
+    border-radius: 0px;
+    outline: none;
+    padding: 10px; }
+  .input__submit {
+    padding: 10px;
+    border-radius: 50%;
+    color: green;
+    cursor: pointer;
+    margin-left: 25px; }
+
+.table__head-row {
+  color: #494949;
+  letter-spacing: 1px; }
+
+.table__head-data {
+  padding: 10px 50px;
+  text-align: center;
+  margin: 0px;
+  text-transform: uppercase;
+  border: 1px solid rgba(23, 28, 18, 0.3); }
+  .table__head-data--description {
+    min-width: 500px; }
+
+.table__body {
+  text-align: center;
+  border: 1px solid red; }
+  .table__body-row {
+    border: 1px solid red; }
+    .table__body-row:hover .table__body-data--cta {
+      display: block;
+      animation: slideRight .4s ease; }
+  .table__body-data {
+    padding: 10px 5px;
+    border: 1px solid #dddddd; }
+    .table__body-data--income {
+      background: green;
+      color: #fff; }
+    .table__body-data--expense {
+      background: red;
+      color: #fff; }
+    .table__body-data--cta {
+      background: #21d3ff;
+      display: none;
+      padding: 10px 25px;
+      color: #fff;
+      cursor: pointer; }
