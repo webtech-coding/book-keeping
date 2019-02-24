@@ -6,5 +6,5 @@ Mock up app for a fictional company to keep book keeping records.
 It is a pure vanilla javascript project.
 
 #### how to use
--npm install
--npm run sass
+- npm install
+- npm run sass
