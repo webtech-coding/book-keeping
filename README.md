@@ -1,2 +1,3 @@
 # Company book keeping App
-![Alt text](example.jpg?raw=true "Title")
+
+![alt text](https://github.com/webtech-delver/book-keeping/example.png)
