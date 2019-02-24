@@ -135,3 +135,16 @@ html {
       padding: 10px 25px;
       color: #fff;
       cursor: pointer; }
+
+.table__foot-data {
+  padding: 10px 5px;
+  border: 1px solid #dddddd; }
+  .table__foot-data--total {
+    text-align: right;
+    padding-right: 20px;
+    font-weight: 600;
+    text-transform: uppercase; }
+  .table__foot-data--income {
+    color: green; }
+  .table__foot-data--expense {
+    color: red; }
