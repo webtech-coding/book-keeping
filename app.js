@@ -40,6 +40,16 @@ var budget=function(){
 
         totals:function(){
             return data.totals
+        },
+
+        removeData:function(id){
+            var deleteItem=data.items.filter(function(item){
+                return item.id==id
+            })
+
+            var index=data.items.indexOf(deleteItem[0])
+            data.items.splice(index,1)
+            console.log(data.items)
         }
     }
     
@@ -56,7 +66,8 @@ var UI=function(budget){
         typeField:'.input__type',
         tableBody:'.table__body',
         totalExp:'.table__foot-data--expense',
-        totalInc:'.table__foot-data--income'
+        totalInc:'.table__foot-data--income',
+        delete:'.table__body-data--cta'
 
     }
 
@@ -78,6 +89,9 @@ var UI=function(budget){
             var items=budget.dataItems()
             document.querySelector(strings.tableBody).innerHTML=''
 
+            budget.totals().inc=0
+            budget.totals().exp=0
+
             items.forEach(function(item){
 
                 if(item.type=='income'){
@@ -91,17 +105,16 @@ var UI=function(budget){
                 html+=`<tr class="table__body-row">
                 <td class="table__body-data">${item.date}</td>
                 <td class="table__body-data">${item.reference}</td>
-                <td class="table__body-data">${item.reference}</td>
+                <td class="table__body-data">${item.description}</td>
                 <td class="table__body-data ${(item.type=='income')?'table__body-data--income':''}"> ${(item.type=='income')?'$'+item.value:'---'} </td>
                 <td class="table__body-data ${(item.type=='expense')?'table__body-data--expense':''}">${(item.type=='expense')?'$'+item.value:'---'}</td>
-                <td class="table__body-data table__body-data--cta"><i class="far fa-trash-alt"></i></td>
+                <td class="table__body-data table__body-data--cta" data-id=${item.id}><i class="far fa-trash-alt"></i></td>
                 </tr>`   
-
-                console.log(html)
+               
             })
 
             document.querySelector(strings.tableBody).innerHTML=html
-            
+           
         },
         displayTotals:function(){
             document.querySelector('.table__foot-data--income').textContent='$'+budget.totals().inc
@@ -123,8 +136,13 @@ var app=function(ui,budget){
     var DOMStrings=ui.DOMstrings()
 
     var HandleEvent=function(){
+
+        console.log(budget.dataItems().length)
         
         document.querySelector(DOMStrings.inputButton).addEventListener('click',addItems)
+          
+        document.querySelector(DOMStrings.tableBody).addEventListener('click',deleteItem)
+        
     }
 
     var addItems=function(){
@@ -140,7 +158,6 @@ var app=function(ui,budget){
         
         if(!isEmpty){
             newItem=budget.addItem(inputValue.date,inputValue.reference,inputValue.description,inputValue.value,inputValue.type)
-     
 
         //ADD ITEMS TO THE UI
         ui.addListToUI()
@@ -152,10 +169,32 @@ var app=function(ui,budget){
         }
         
     }
+
+    deleteItem=function(e){
+
+        var deleteList  
+       
+       if(e.target.parentNode.classList.contains('table__body-data--cta')){
+            deleteList=e.target.parentNode
+       }else if(e.target.classList.contains('table__body-data--cta')){
+           deleteList=e.target
+       }
+
+       var id=deleteList.getAttribute('data-id')
+
+       budget.removeData(id)
+
+       ui.addListToUI()
+
+       ui.displayTotals()
+
+
+    }
     
     return {
         init:function(){
            HandleEvent()
+           
         }
     }
    
