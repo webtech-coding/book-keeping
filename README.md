@@ -7,6 +7,6 @@ It is a pure vanilla javascript project.
 
 
 
-# how to use
+# How to use
 - npm install
 - npm run sass
